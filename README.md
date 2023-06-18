@@ -71,7 +71,7 @@ docker build -t xray-ui .
 
 ## SSL Certificate Application
 
-> This feature and tutorial is provided by [FranzKafkaYu](https://github.com/FranzKafkaYu) and Translate by [Mohammad Javidi](https://github.com/jvdi)
+> This feature and tutorial is provided by [FranzKafkaYu](https://github.com/FranzKafkaYu)
 
 The script has a built-in SSL certificate application function. To apply for a certificate using this script，the following conditions must be met:
 
