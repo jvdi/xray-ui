@@ -1,4 +1,4 @@
-# xray-ui
+# Xray-ui
 
 > This script provided by [vaxilu](https://github.com/vaxilu) - v0.0.0 of this repo just translate to English of [x-ui v0.3.2](https://github.com/vaxilu/x-ui)
 
