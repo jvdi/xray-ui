@@ -45,6 +45,7 @@ systemctl restart xray-ui
 ## Install with docker
 
 > This docker tutorial and docker image is provided by [Chasing66](https://github.com/Chasing66) and Translate by [Mohammad Javidi](https://github.com/jvdi)
+> [dockerize Xray-ui](https://github.com/jvdi/xray-ui-docker)
 
 1. Install docker
 
