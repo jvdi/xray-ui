@@ -135,10 +135,5 @@ First install the latest version of xray-ui on the server where v2-ui is install
 Xray-ui v2-ui
 ```
 
-## issue 关闭
-
-各种小白问题看得血压很高
-
-## Stargazers over time
-
-[![Stargazers over time](https://starchart.cc/vaxilu/x-ui.svg)](https://starchart.cc/vaxilu/x-ui)
+### 💞 Thanks
+- [vaxilu](https://github.com/vaxilu)
