@@ -84,7 +84,7 @@ install_base() {
 #This function will be called when user installed xray-ui out of security
 config_after_install() {
     echo -e "${yellow}For security reasons，you need to change the port and account password after complete the installation/update${plain}"
-    read -p "Confirmation to continue?[y/n]": config_confirm
+    read -p "Are you want go to Setting?[y/n]": config_confirm
     if [[ x"${config_confirm}" == x"y" || x"${config_confirm}" == x"Y" ]]; then
         read -p "Please set your account name:" config_account
         echo -e "${yellow}Your account name will be set to:${config_account}${plain}"
