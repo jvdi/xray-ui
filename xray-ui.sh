@@ -36,7 +36,7 @@ elif cat /proc/version | grep -Eqi "ubuntu"; then
 elif cat /proc/version | grep -Eqi "centos|red hat|redhat"; then
     release="centos"
 else
-    LOGE "System version not detected, please contact the script author !!!\n" && exit 1
+    LOGE "System version not detected，please contact the script author !\n" && exit 1
 fi
 
 os_version=""
@@ -51,15 +51,15 @@ fi
 
 if [[ x"${release}" == x"centos" ]]; then
     if [[ ${os_version} -le 6 ]]; then
-        LOGE "Please use CentOS 7 or higher !!!\n" && exit 1
+        LOGE "Please CentOS 7 or higher！\n" && exit 1
     fi
 elif [[ x"${release}" == x"ubuntu" ]]; then
     if [[ ${os_version} -lt 16 ]]; then
-        LOGE "Please use Ubuntu 16 or higher !!!\n" && exit 1
+        LOGE "Please Ubuntu 16 or higher！\n" && exit 1
     fi
 elif [[ x"${release}" == x"debian" ]]; then
     if [[ ${os_version} -lt 8 ]]; then
-        LOGE "Please use Debian 8 or higher !!!\n" && exit 1
+        LOGE "Please Debian 8 or higher！\n" && exit 1
     fi
 fi
 
@@ -80,7 +80,7 @@ confirm() {
 }
 
 confirm_restart() {
-    confirm "Do you want to restart the panel, restarting the panel will also restart the xray" "y"
+    confirm "Do you want to restart the panel，restarting the panel will also restart the xray" "y"
     if [[ $? == 0 ]]; then
         restart
     else
@@ -105,7 +105,7 @@ install() {
 }
 
 update() {
-    confirm "This function will be forced to reinstall the current latest version. The data will not be lost. Do you continue?" "n"
+    confirm "This function will be forced to reinstall the current latest version，The data will not be lost. Do you continue?" "n"
     if [[ $? != 0 ]]; then
         LOGE "Canceled"
         if [[ $# == 0 ]]; then
@@ -115,13 +115,13 @@ update() {
     fi
     bash <(curl -Ls https://raw.githubusercontent.com/jvdi/xray-ui/master/install.sh)
     if [[ $? == 0 ]]; then
-        LOGI "The update is complete and the panel has been automatically restarted"
+        LOGI "The update is complete and the panel has been automatically restarted "
         exit 0
     fi
 }
 
 uninstall() {
-    confirm "Are you sure you want to uninstall the panel, xray will uninstall it too?" "n"
+    confirm "Are you sure you want to uninstall the panel，xray will uninstall it too?" "n"
     if [[ $? != 0 ]]; then
         if [[ $# == 0 ]]; then
             show_menu
@@ -137,7 +137,7 @@ uninstall() {
     rm /usr/local/xray-ui/ -rf
 
     echo ""
-    echo -e "Uninstall successful - if you want to delete this script, exit the script and run ${green}rm /usr/bin/xray-ui -f${plain} to do delete"
+    echo -e "Uninstall successful - if you want to delete this script，exit the script and run ${green}rm /usr/bin/xray-ui -f${plain} to do delete"
     echo ""
 
     if [[ $# == 0 ]]; then
@@ -146,7 +146,7 @@ uninstall() {
 }
 
 reset_user() {
-    confirm "Are you sure you want to reset the username and password of the admin?" "n"
+    confirm "Are you sure you want to reset the username and password of the admin" "n"
     if [[ $? != 0 ]]; then
         if [[ $# == 0 ]]; then
             show_menu
@@ -154,12 +154,12 @@ reset_user() {
         return 0
     fi
     /usr/local/xray-ui/xray-ui setting -username admin -password admin
-    echo -e "Username and password have been reset to ${green}admin${plain}, Now please restart the panel"
+    echo -e "Username and password have been reset to ${green}admin${plain}，Now please restart the panel"
     confirm_restart
 }
 
 reset_config() {
-    confirm "Are you sure you want to reset all the panel settings, the account data will not be lost, the username and password will not be changed" "n"
+    confirm "Are you sure you want to reset all the panel settings，the account data will not be lost，the username and password will not be changed" "n"
     if [[ $? != 0 ]]; then
         if [[ $# == 0 ]]; then
             show_menu
@@ -167,14 +167,14 @@ reset_config() {
         return 0
     fi
     /usr/local/xray-ui/xray-ui setting -reset
-    echo -e "All panel settings have been reset to their default values, now please restart the panel and use the default port: ${green}54321${plain} to access the panel"
+    echo -e "All panel settings have been reset to their default values，now please restart the panel and use the default port ${green}54321${plain} to access the panel"
     confirm_restart
 }
 
 check_config() {
     info=$(/usr/local/xray-ui/xray-ui setting -show true)
     if [[ $? != 0 ]]; then
-        LOGE "get current settings error,please check logs"
+        LOGE "get current settings error，please check logs"
         show_menu
     fi
     LOGI "${info}"
@@ -187,7 +187,7 @@ set_port() {
         before_show_menu
     else
         /usr/local/xray-ui/xray-ui setting -port ${port}
-        echo -e "After setting the port, now please restart the panel and use the newly set port ${green}${port}${plain} to access the panel"
+        echo -e "After setting the port，now please restart the panel and use the newly set port ${green}${port}${plain} to access the panel"
         confirm_restart
     fi
 }
@@ -196,7 +196,7 @@ start() {
     check_status
     if [[ $? == 0 ]]; then
         echo ""
-        LOGI "Panel is running, no need to start again, if you want to restart please select restart"
+        LOGI "Panel is running， no need to start again，if you want to restart please select restart"
     else
         systemctl start xray-ui
         sleep 2
@@ -204,7 +204,7 @@ start() {
         if [[ $? == 0 ]]; then
             LOGI "xray-ui Successful start-up"
         else
-            LOGE "The panel failed to start, probably because it took more than two seconds to start, please check the log information later"
+            LOGE "The panel failed to start，probably because it took more than two seconds to start，please check the log information later"
         fi
     fi
 
@@ -217,7 +217,7 @@ stop() {
     check_status
     if [[ $? == 1 ]]; then
         echo ""
-        LOGI "Panel is stopped, no need to stop again"
+        LOGI "Panel is stopped，no need to stop again"
     else
         systemctl stop xray-ui
         sleep 2
@@ -225,7 +225,7 @@ stop() {
         if [[ $? == 1 ]]; then
             LOGI "xray-ui and xray stop successfully"
         else
-            LOGE "The panel failed to stop, probably because it took more than two seconds to stop, please check the log information later"
+            LOGE "The panel failed to stop，probably because it took more than two seconds to stop，please check the log information later"
         fi
     fi
 
@@ -241,7 +241,7 @@ restart() {
     if [[ $? == 0 ]]; then
         LOGI "xray-ui and xray Reboot successful"
     else
-        LOGE "Panel reboot failed, probably because the boot time exceeded two seconds, please check the log information later"
+        LOGE "Panel reboot failed，probably because the boot time exceeded two seconds，please check the log information later"
     fi
     if [[ $# == 0 ]]; then
         before_show_menu
@@ -305,15 +305,15 @@ update_shell() {
     wget -O /usr/bin/xray-ui -N --no-check-certificate https://github.com/jvdi/xray-ui/raw/master/xray-ui.sh
     if [[ $? != 0 ]]; then
         echo ""
-        LOGE "Download script failed, please check if you can connect to Github on your local computer"
+        LOGE "Download script failed，please check if you can connect to Github on your local computer"
         before_show_menu
     else
         chmod +x /usr/bin/xray-ui
-        LOGI "Upgrade script successfully, please re-run the script" && exit 0
+        LOGI "Upgrade script successfully，please re-run the script" && exit 0
     fi
 }
 
-# 0: running, 1: not running, 2: not installed
+# 0: running，1: not running，2: not installed
 check_status() {
     if [[ ! -f /etc/systemd/system/xray-ui.service ]]; then
         return 2
@@ -339,7 +339,7 @@ check_uninstall() {
     check_status
     if [[ $? != 2 ]]; then
         echo ""
-        LOGE "Panel is already installed, please do not repeat the installation"
+        LOGE "Panel is already installed，please do not repeat the installation"
         if [[ $# == 0 ]]; then
             before_show_menu
         fi
@@ -402,16 +402,16 @@ check_xray_status() {
 show_xray_status() {
     check_xray_status
     if [[ $? == 0 ]]; then
-        echo -e "Xray Status: ${green}Run${plain}"
+        echo -e "xray Status: ${green}Run${plain}"
     else
-        echo -e "Xray Status: ${red}Not running${plain}"
+        echo -e "xray Status: ${red}Not running${plain}"
     fi
 }
 
 ssl_cert_issue() {
     echo -E ""
     LOGD "******Instructions for use******"
-    LOGI "This script will use the Acme to apply for a certificate, and need to:"
+    LOGI "This script will use the Acme to apply for a certificate，and need to:"
     LOGI "1.Know the Cloudflare registration email"
     LOGI "2.Know the Cloudflare Global API Key"
     LOGI "3.The domain name has been resolved to the current server via Cloudflare"
@@ -446,35 +446,35 @@ ssl_cert_issue() {
         LOGD "Your registered email address is:${CF_AccountEmail}"
         ~/.acme.sh/acme.sh --set-default-ca --server letsencrypt
         if [ $? -ne 0 ]; then
-            LOGE "Modify default CA to Lets'Encrypt fails, script exits"
+            LOGE "Modify default CA to Lets'Encrypt fails，script exits"
             exit 1
         fi
         export CF_Key="${CF_GlobalKey}"
         export CF_Email=${CF_AccountEmail}
         ~/.acme.sh/acme.sh --issue --dns dns_cf -d ${CF_Domain} -d *.${CF_Domain} --log
         if [ $? -ne 0 ]; then
-            LOGE "Cert issuance failure, script exit"
+            LOGE "Cert issuance failure，script exit"
             exit 1
         else
-            LOGI "Cert issued successfully, installation in progress..."
+            LOGI "Cert issued successfully，installation in progress..."
         fi
         ~/.acme.sh/acme.sh --installcert -d ${CF_Domain} -d *.${CF_Domain} --ca-file /root/cert/ca.cer \
         --cert-file /root/cert/${CF_Domain}.cer --key-file /root/cert/${CF_Domain}.key \
         --fullchain-file /root/cert/fullchain.cer
         if [ $? -ne 0 ]; then
-            LOGE "Cert installation failed, script exited"
+            LOGE "Cert installation failed，script exited"
             exit 1
         else
-            LOGI "The cert is installed successfully, turn on automatic update..."
+            LOGI "The cert is installed successfully，turn on automatic update..."
         fi
         ~/.acme.sh/acme.sh --upgrade --auto-upgrade
         if [ $? -ne 0 ]; then
-            LOGE "Auto update setting failed, script quit"
+            LOGE "Auto update setting failed，script quit"
             ls -lah cert
             chmod 755 $certPath
             exit 1
         else
-            LOGI "The cert has been installed and automatic update has been enabled, the specific information is as follows"
+            LOGI "The cert has been installed and automatic update has been enabled，the specific information is as follows"
             ls -lah cert
             chmod 755 $certPath
         fi
@@ -491,7 +491,7 @@ show_usage() {
     echo "xray-ui stop         - Stop xray-ui panel"
     echo "xray-ui restart      - Restart the xray-ui panel"
     echo "xray-ui status       - View xray-ui status"
-    echo "xray-ui enable       - Set xray-ui to boot on its own"
+    echo "xray-ui enable       - Set xray-ui to boot on Startup"
     echo "xray-ui disable      - Cancel xray-ui boot-up"
     echo "xray-ui log          - View xray-ui logs"
     echo "xray-ui v2-ui        - Migrate the v2-ui account data from this machine to xray-ui"
