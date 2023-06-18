@@ -1,8 +1,8 @@
-# Xray-ui
+# Xray-UI
 
 > This script provided by [vaxilu](https://github.com/vaxilu) - v0.0.0 of this repo just translate to English of [x-ui v0.3.2](https://github.com/vaxilu/x-ui)
 
-xray web UI Panel - support user management system and multiprotocol proxy server
+Xray web UI Panel - support user management system and multiprotocol proxy server
 
 # Features
 
@@ -24,8 +24,8 @@ bash <(curl -Ls https://raw.githubusercontent.com/jvdi/xray-ui/master/install.sh
 
 ## Manual Installation & Upgrade
 
-1. First download the latest package from https://github.com/jvdi/xray-ui/releases，usually choose the `amd64` architecture
-2. Then upload this compressed package to `/root/` the directory ，and use `root`the user to log in to the server
+1. First download the latest package from https://github.com/jvdi/xray-ui/releases ，usually choose the `amd64` architecture
+2. Then upload this compressed package to `/root/` the directory ，and use `root` the user to log in to the server
 
 > If your server cpu architecture is not `amd64` replace with other architectures
 
@@ -100,9 +100,9 @@ Precautions:
 xray-ui supports daily traffic notifications and panel login reminders via Tg bot. To use Tg bot，you need to apply for it yourself. You can refer to the [blog link](https://coderfan.net/how-to-use-telegram-bot-to-alarm-you-when-someone-login-into-your-vps.html)
 for the specific application tutorial. Instructions:Set the bot-related parameters in the panel background，including
 
-- Tg Robot Token
-- Tg Bot ChatId
-- Tg robot cycle running time，using crontab syntax  
+- Tlg Robot Token
+- Tlg Bot ChatId
+- Tlg robot cycle running time，using crontab syntax  
 
 Reference syntax.
 - 30 * * * * * * // Notify on the 30ths of every minute
