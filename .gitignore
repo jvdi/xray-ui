@@ -1,2 +1,3 @@
-dist/
+@dist/
+@source/
 bin/config.json
