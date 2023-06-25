@@ -25,8 +25,8 @@
 </template>
 
 <template v-if="inbound.tls || inbound.xtls">
-    <p v-if="inbound.tls">tls: <a-tag color="green">Open</a-tag></p>
-    <p v-if="inbound.xtls">xtls: <a-tag color="green">Open</a-tag></p>
+    <p v-if="inbound.tls">TLS : <a-tag color="green">Open</a-tag></p>
+    <p v-if="inbound.xtls">X-TLS : <a-tag color="green">Open</a-tag></p>
 </template>
 <template v-else>
     <p>tls: <a-tag color="red">Close</a-tag></p>
@@ -48,7 +48,7 @@
 
     <template v-if="dbInbound.isVMess">
         <p>uuid: <a-tag color="green">[[ inbound.uuid ]]</a-tag></p>
-        <p>alterId: <a-tag color="green">[[ inbound.alterId ]]</a-tag></p>
+        <p>alterID: <a-tag color="green">[[ inbound.alterId ]]</a-tag></p>
     </template>
 
     <template v-if="dbInbound.isVLess">

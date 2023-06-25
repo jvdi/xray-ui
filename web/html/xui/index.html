@@ -35,7 +35,7 @@
                                                     :stroke-color="status.mem.color"
                                                     :percent="status.mem.percent"></a-progress>
                                         <div>
-                                            Memory: [[ sizeFormat(status.mem.current) ]] / [[ sizeFormat(status.mem.total) ]]
+                                            Memory : [[ sizeFormat(status.mem.current) ]] / [[ sizeFormat(status.mem.total) ]]
                                         </div>
                                     </a-col>
                                 </a-row>
@@ -47,7 +47,7 @@
                                                     :stroke-color="status.swap.color"
                                                     :percent="status.swap.percent"></a-progress>
                                         <div>
-                                            Swap: [[ sizeFormat(status.swap.current) ]] / [[ sizeFormat(status.swap.total) ]]
+                                            Swap : [[ sizeFormat(status.swap.current) ]] / [[ sizeFormat(status.swap.total) ]]
                                         </div>
                                     </a-col>
                                     <a-col :span="12" style="text-align: center">
@@ -55,7 +55,7 @@
                                                     :stroke-color="status.disk.color"
                                                     :percent="status.disk.percent"></a-progress>
                                         <div>
-                                            HDD: [[ sizeFormat(status.disk.current) ]] / [[ sizeFormat(status.disk.total) ]]
+                                            HDD : [[ sizeFormat(status.disk.current) ]] / [[ sizeFormat(status.disk.total) ]]
                                         </div>
                                     </a-col>
                                 </a-row>
@@ -68,7 +68,7 @@
                 <a-row>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            Xray Status:
+                            Xray Status :
                             <a-tag :color="status.xray.color">[[ status.xray.state ]]</a-tag>
                             <a-tooltip v-if="status.xray.state === State.Error">
                                 <template slot="title">
@@ -82,7 +82,7 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            UP-Time:
+                            UP-Time :
                             <a-tag color="#87d068">[[ formatSecond(status.uptime) ]]</a-tag>
                             <a-tooltip>
                                 <template slot="title">
@@ -94,12 +94,12 @@
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            System load: [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]
+                            System Load : [[ status.loads[0] ]] | [[ status.loads[1] ]] | [[ status.loads[2] ]]
                         </a-card>
                     </a-col>
                     <a-col :sm="24" :md="12">
                         <a-card hoverable>
-                            (TCP / UDP) Number of connections: [[ status.tcpCount ]] / [[ status.udpCount ]]
+                            (TCP / UDP) Number of Connections : [[ status.tcpCount ]] / [[ status.udpCount ]]
                             <a-tooltip>
                                 <template slot="title">
                                     Total number of connections for all NICs
@@ -116,7 +116,7 @@
                                     [[ sizeFormat(status.netIO.up) ]] / S
                                     <a-tooltip>
                                         <template slot="title">
-                                            Total upload speed of all NICs
+                                            Total Upload speed of all NICs
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -126,7 +126,7 @@
                                     [[ sizeFormat(status.netIO.down) ]] / S
                                     <a-tooltip>
                                         <template slot="title">
-                                            Total download speed of all NICs
+                                            Total Download speed of all NICs
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -142,7 +142,7 @@
                                     [[ sizeFormat(status.netTraffic.sent) ]]
                                     <a-tooltip>
                                         <template slot="title">
-                                            Total upload traffic for all NICs since system startup
+                                            Total Upload traffic for all NICs since system startup
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -152,7 +152,7 @@
                                     [[ sizeFormat(status.netTraffic.recv) ]]
                                     <a-tooltip>
                                         <template slot="title">
-                                            Total download traffic for all NICs since system startup
+                                            Total Download traffic for all NICs since system startup
                                         </template>
                                         <a-icon type="question-circle" theme="filled"></a-icon>
                                     </a-tooltip>
@@ -164,7 +164,7 @@
             </transition>
         </a-layout-content>
     </a-layout>
-    <a-modal id="version-modal" v-model="versionModal.visible" title="Switching versions"
+    <a-modal id="version-modal" v-model="versionModal.visible" title="Switching Versions"
              :closable="true" @ok="() => versionModal.visible = false"
              ok-text="OK" cancel-text="Cancel">
         <h2>Select the Version</h2>
@@ -181,9 +181,9 @@
 <script>
 
     const State = {
-        Running: "running",
-        Stop: "stop",
-        Error: "error",
+        Running: "Running",
+        Stop: "Stop",
+        Error: "Error",
     }
     Object.freeze(State);
 

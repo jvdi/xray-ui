@@ -1,6 +1,6 @@
 {{define "inboundInfoModal"}}
 {{template "component/inboundInfo"}}
-<a-modal id="inbound-info-modal" v-model="infoModal.visible" title="Detailed information" @ok="infoModal.ok"
+<a-modal id="inbound-info-modal" v-model="infoModal.visible" title="Full Detail" @ok="infoModal.ok"
          :closable="true" :mask-closable="true"
          ok-text="Copy Link" cancel-text='{{ i18n "close" }}' :ok-button-props="infoModal.okBtnPros">
     <inbound-info :db-inbound="dbInbound" :inbound="inbound"></inbound-info>

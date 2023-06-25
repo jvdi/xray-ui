@@ -31,11 +31,11 @@
                                 <a-tag color="green">[[ sizeFormat(total.up) ]] / [[ sizeFormat(total.down) ]]</a-tag>
                             </a-col>
                             <a-col :xs="24" :sm="24" :lg="12">
-                                Total amount: 
+                                Total Up/Down: 
                                 <a-tag color="green">[[ sizeFormat(total.up + total.down) ]]</a-tag>
                             </a-col>
                             <a-col :xs="24" :sm="24" :lg="12">
-                                Number of inbound stations: 
+                                Number of Inbound Stations: 
                                 <a-tag color="green">[[ dbInbounds.length ]]</a-tag>
                             </a-col>
                         </a-row>
@@ -131,7 +131,7 @@
         width: 40,
         scopedSlots: { customRender: 'enable' },
     }, {
-        title: "Id",
+        title: "ID",
         align: 'center',
         dataIndex: "id",
         width: 30,
@@ -156,7 +156,7 @@
         width: 150,
         scopedSlots: { customRender: 'traffic' },
     }, {
-        title: "Detailed information",
+        title: "Full Detail",
         align: 'center',
         width: 40,
         scopedSlots: { customRender: 'settings' },
@@ -166,7 +166,7 @@
         width: 60,
         scopedSlots: { customRender: 'stream' },
     }, {
-        title: "Expiration time",
+        title: "Expiration Time",
         align: 'center',
         width: 80,
         scopedSlots: { customRender: 'expiryTime' },
