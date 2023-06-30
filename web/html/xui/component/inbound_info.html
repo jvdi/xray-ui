@@ -3,25 +3,25 @@
 
 <template v-if="inbound.isTcp || inbound.isWs || inbound.isH2">
     <p v-if="inbound.host">Host: <a-tag color="green">[[ inbound.host ]]</a-tag></p>
-    <p v-else>host: <a-tag color="orange">None</a-tag></p>
+    <p v-else>Host: <a-tag color="orange">None</a-tag></p>
 
     <p v-if="inbound.path">Path: <a-tag color="green">[[ inbound.path ]]</a-tag></p>
-    <p v-else>path: <a-tag color="orange">None</a-tag></p>
+    <p v-else>Path: <a-tag color="orange">None</a-tag></p>
 </template>
 
 <template v-if="inbound.isQuic">
-    <p>quic Encryption: <a-tag color="green">[[ inbound.quicSecurity ]]</a-tag></p>
-    <p>quic Password: <a-tag color="green">[[ inbound.quicKey ]]</a-tag></p>
-    <p>quic Camouflage: <a-tag color="green">[[ inbound.quicType ]]</a-tag></p>
+    <p>Quic Encryption: <a-tag color="green">[[ inbound.quicSecurity ]]</a-tag></p>
+    <p>Quic Password: <a-tag color="green">[[ inbound.quicKey ]]</a-tag></p>
+    <p>Quic Camouflage: <a-tag color="green">[[ inbound.quicType ]]</a-tag></p>
 </template>
 
 <template v-if="inbound.isKcp">
-    <p>kcp Encryption: <a-tag color="green">[[ inbound.kcpType ]]</a-tag></p>
-    <p>kcp Password: <a-tag color="green">[[ inbound.kcpSeed ]]</a-tag></p>
+    <p>KCP Encryption: <a-tag color="green">[[ inbound.kcpType ]]</a-tag></p>
+    <p>KCP Password: <a-tag color="green">[[ inbound.kcpSeed ]]</a-tag></p>
 </template>
 
 <template v-if="inbound.isGrpc">
-    <p>grpc serviceName: <a-tag color="green">[[ inbound.serviceName ]]</a-tag></p>
+    <p>Grpc serviceName: <a-tag color="green">[[ inbound.serviceName ]]</a-tag></p>
 </template>
 
 <template v-if="inbound.tls || inbound.xtls">
@@ -29,13 +29,13 @@
     <p v-if="inbound.xtls">X-TLS : <a-tag color="green">Open</a-tag></p>
 </template>
 <template v-else>
-    <p>tls: <a-tag color="red">Close</a-tag></p>
+    <p>TLS: <a-tag color="red">Close</a-tag></p>
 </template>
 <p v-if="inbound.tls">
-    tls domain name: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "None" ]]</a-tag>
+    TLS Domain name: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "None" ]]</a-tag>
 </p>
 <p v-if="inbound.xtls">
-    xtls domain name: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "None" ]]</a-tag>
+    XTLS Domain name: <a-tag :color="inbound.serverName ? 'green' : 'orange'">[[ inbound.serverName ? inbound.serverName : "None" ]]</a-tag>
 </p>
 {{end}}
 
