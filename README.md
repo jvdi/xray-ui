@@ -102,7 +102,7 @@ Precautions:
 - The certificate installation directory is the /root/cert directory
 - The certificates applied for by this script are all wild domain name certificates
 
-## Use of Tlg robot (under development，temporarily unavailable)
+## Use of Telegram Robot
 
 > This feature and tutorial is provided by [FranzKafkaYu](https://github.com/FranzKafkaYu)
 
