@@ -45,7 +45,7 @@ systemctl restart xray-ui
 ## Install with docker
 
 > This docker tutorial and docker image is provided by [Chasing66](https://github.com/Chasing66) and Translate by [Mohammad Javidi](https://github.com/jvdi)
-> [dockerize Xray-ui](https://github.com/jvdi/xray-ui-docker)
+> [dockerize xray-ui](https://github.com/jvdi/xray-ui-docker)
 
 1. Install docker
 
@@ -68,6 +68,14 @@ docker run -itd --network=host \
 
 ```shell
 docker build -t xray-ui .
+```
+
+## Build xray-ui From source
+```
+# in root of project
+go build
+# move it xray-ui file to last compress file and replace it
+tar -czvf xray-ui-linux-amd64.tar.gz xray-ui/
 ```
 
 ## SSL Certificate Application
@@ -101,9 +109,9 @@ Precautions:
 xray-ui supports daily traffic notifications and panel login reminders via Tg bot. To use Tg bot，you need to apply for it yourself. You can refer to the [blog link](https://coderfan.net/how-to-use-telegram-bot-to-alarm-you-when-someone-login-into-your-vps.html)
 for the specific application tutorial. Instructions:Set the bot-related parameters in the panel background，including
 
-- Tlg Robot Token
-- Tlg Bot ChatId
-- Tlg robot cycle running time，using crontab syntax  
+- Telegram Robot Token
+- Telegram Bot ChatId
+- Telegram robot cycle running time，using crontab syntax  
 
 Reference syntax.
 - 30 * * * * * * // Notify on the 30ths of every minute
@@ -111,7 +119,7 @@ Reference syntax.
 - @daily // Daily notification (at 00:00 am sharp)
 - @every 8h // Notify every 8 hours  
 
-TG Notification Content.
+Telegram Notification Content.
 - Node traffic usage
 - Panel login reminder
 - Node expiration reminder
