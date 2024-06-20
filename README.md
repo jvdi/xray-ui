@@ -1,6 +1,7 @@
 # Xray-UI
 
-> This script provided by [vaxilu](https://github.com/vaxilu) - v0.0.0 of this repo just translate to English of [x-ui v0.3.2](https://github.com/vaxilu/x-ui)
+> This script provided by [vaxilu](https://github.com/vaxilu) - v0.0.1 of this repo just translate to English of [x-ui v0.3.2](https://github.com/vaxilu/x-ui)
+> This project Translate Just for test (Thanks from Google translate)
 
 Xray web UI Panel - support user management system and multiprotocol proxy server
 
